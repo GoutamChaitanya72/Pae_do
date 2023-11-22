@@ -89,11 +89,11 @@ input[type="submit"] {
 @media screen and (min-width: 600px) and (max-width: 1200px) {
   /* Change the font size of the h1 and h2 elements */
   h1 {
-    font-size: 10vw; /* Use viewport width unit instead of fixed size */
+    font-size: 8vw; /* Use viewport width unit instead of fixed size */
   }
 
   h2 {
-    font-size: 8vw; /* Use viewport width unit instead of fixed size */
+    font-size: 6vw; /* Use viewport width unit instead of fixed size */
   }
 
   /* Change the background color and image of the body element */

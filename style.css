@@ -1,1 +1,145 @@
+/* Define the default styles for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define the styles for the h1 and h2 elements */
+h1,
+h2 {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+/* Define the styles for the form elements */
+form {
+  font-family: Arial, sans-serif;
+  width: 80%; /* Use relative width instead of fixed width */
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 20px;
+  border: 1px solid black;
+  font-size: 5vw;
+}
+
+input,
+select {
+  display: block;
+  width: 100%; /* Use relative width instead of fixed width */
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 4vw; /* Increase the font size of the input values */
+}
+
+input[type="submit"] {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 6vw; /* Increase the font size of the submit button */
+}
+
+/* Define the styles for the result element */
+#result {
+  font-family: Arial, sans-serif;
+  width: 80%; /* Use relative width instead of fixed width */
+  margin: 20px auto; /* Center the result horizontally */
+  padding: 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* Use media queries to define different styles for different screen sizes */
+
+/* If the screen width is less than or equal to 600px, apply the following styles */
+@media screen and (max-width: 600px) {
+  /* Change the font size of the h1 and h2 elements */
+  h1 {
+    font-size: 10vw; /* Use viewport width unit instead of fixed size */
+  }
+
+  h2 {
+    font-size: 8vw; /* Use viewport width unit instead of fixed size */
+  }
+
+  /* Change the background color and image of the body element */
+  body {
+    background-color: lightgreen;
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/8dc6c0f2491a464c15bd11e3eab3675e65161a0b/7283494.jpg?raw=true"); /* Set the background image from the URL */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Make the image cover the entire element */
+    background-position: center; /* Align the image to the center of the element */
+  }
+
+  /* Change the text color of the h1 element */
+  h1 {
+    color: navy;
+  }
+
+  /* Change the text color of the h2 element */
+  h2 {
+    color: red;
+  }
+}
+
+/* If the screen width is greater than 600px and less than or equal to 1200px, apply the following styles */
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  /* Change the font size of the h1 and h2 elements */
+  h1 {
+    font-size: 4vw; /* Use viewport width unit instead of fixed size */
+  }
+
+  h2 {
+    font-size: 3vw; /* Use viewport width unit instead of fixed size */
+  }
+
+  /* Change the background color and image of the body element */
+  body {
+    background-color: lightblue;
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/8dc6c0f2491a464c15bd11e3eab3675e65161a0b/7283494.jpg?raw=true"); /* Set the background image from the URL */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Make the image cover the entire element */
+    background-position: center; /* Align the image to the center of the element */
+  }
+
+  /* Change the text color of the h1 element */
+  h1 {
+    color: navy;
+  }
+
+  /* Change the text color of the h2 element */
+  h2 {
+    color: red;
+  }
+}
+
+/* If the screen width is greater than 1200px, apply the following styles */
+@media screen and (min-width: 1200px) {
+  /* Change the font size of the h1 and h2 elements */
+  h1 {
+    font-size: 3vw; /* Use viewport width unit instead of fixed size */
+  }
+
+  h2 {
+    font-size: 2vw; /* Use viewport width unit instead of fixed size */
+  }
+  /* Change the background color and image of the body element */
+  body {
+    background-color: lightpink;
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/8dc6c0f2491a464c15bd11e3eab3675e65161a0b/7283494.jpg?raw=true"); /* Set the background image from the URL */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Make the image cover the entire element */
+    background-position: center; /* Align the image to the center of the element */
+  }
+
+  /* Change the text color of the h1 element */
+  h1 {
+    color: brown;
+  }
+
+  /* Change the text color of the h2 element */
+  h2 {
+    color: yellow;
+  }
+}
 

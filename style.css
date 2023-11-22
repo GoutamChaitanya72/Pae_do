@@ -9,14 +9,14 @@ html {
 
 /* Define the styles for the heading elements */
 h1, h2 {
-  font-family: Arial, sans-serif;
+  font-family: Poppins, sans-serif;
   text-align: center;
   color: var(--main-color);
 }
 
 /* Define the styles for the form elements */
 form {
-  font-family: Arial, sans-serif;
+  font-family: Momtserrat, sans-serif;
   width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -42,13 +42,13 @@ input[type="submit"] {
 
 /* Define the styles for the result element */
 #result {
-  font-family: Arial, sans-serif;
+  font-family: Montserrat, sans-serif;
   width: 80%;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid black;
   text-align: center;
-  font-size: 3rem;
+  font-size: 1rem;
 }
 #dosageText {
   display: none;

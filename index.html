@@ -1,0 +1,132 @@
+<head>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script>
+    // This function validates the user input and returns a float value
+    function getFloatInput(id, message) {
+      var input = document.getElementById(id).value;
+      var num = parseFloat(input);
+      if (isNaN(num)) {
+        alert("Invalid input. Please enter a number with decimals.");
+        return null;
+      } else {
+        return num;
+      }
+    }
+
+    // This function validates the user input and returns an integer value
+    function getIntInput(id, message) {
+      var input = document.getElementById(id).value;
+      var num = parseInt(input);
+      if (isNaN(num) || num < 1 || num > 4) {
+        alert("Invalid input. Please enter a number between 1 and 4.");
+        return null;
+      } else {
+        return num;
+      }
+    }
+
+    // This function calculates the dosage based on the weight and the med
+    function calculateDosage(weight, med) {
+      var dosage = 0;
+      // Convert the med parameter to a number
+      med = Number(med);
+      if (med == 2) {
+        dosage = 12 * weight;
+      } else if (med == 3) {
+        dosage = 8 * weight;
+      } else if (med == 4) {
+        dosage = 10 * weight;
+      } else if (med == 5) {
+        dosage = getFloatInput("dosage", "Please input dosage in mg/kg manually");
+      }
+      return dosage;
+    }
+
+    // This function calculates the volume based on the dosage and the concentration
+    function calculateVolume(dosage, concentration) {
+      var volume = dosage / concentration;
+      return volume;
+    }
+
+    // This function displays the results on the web page
+    function displayResults(dosage, volume) {
+      document.getElementById("result").innerHTML =
+        "The total dose is " + dosage + " mg.<br>The volume is " + volume + " ml.";
+    }
+
+    // This function handles the submit event of the form
+    function handleSubmit(event) {
+      event.preventDefault(); // prevent the default action of the form
+      var weight = getFloatInput("weight", "Enter the patient's weight in kg");
+      if (weight != null) {
+        // Get the select element by id
+        var select = document.getElementById("meds");
+        // Get the value of the selected option
+        var med = select.value;
+        // Check if the user selected a medication
+        if (med != "") {
+          var dosage = calculateDosage(weight, med);
+          if (dosage != null) {
+            var concentration = getFloatInput(
+              "concentration",
+              "Enter the concentration in mg/ml"
+            );
+            if (concentration != null) {
+              var volume = calculateVolume(dosage, concentration);
+              displayResults(dosage, volume);
+            }
+          }
+        } else {
+          alert("Please select a medication.");
+        }
+      }
+    }
+
+    // This function shows or hides the dosage input and the dosage text based on the selected option
+    function toggleDosage() {
+      // Get the select element by id
+      var select = document.getElementById("meds");
+      // Get the value of the selected option
+      var med = select.value;
+      // Get the dosage input element by id
+      var dosage = document.getElementById("dosage");
+      // Get the dosage text element by id
+      var dosageText = document.getElementById("dosageText");
+      // Check if the selected option is 5 (others)
+      if (med == 5) {
+        // Show the dosage input and the dosage text
+        dosage.style.display = "block";
+        dosageText.style.display = "block";
+      } else {
+        // Hide the dosage input and the dosage text
+        dosage.style.display = "none";
+        dosageText.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 class="center">Pae_do</h1>
+  <h2 class="center">Paediatric dosage calculator</h2>
+  <form id="form" onsubmit="handleSubmit(event)">
+    <p>Enter the patient's weight in kg:</p>
+    <input type="text" id="weight">
+    <label for="meds">Choose a medication:</label>
+    <select name="meds" id="meds" onchange="toggleDosage()">
+      <option value="" hidden>--select--</option>
+      <option value="2">Paracetamol</option>
+      <option value="3">cefixime</option>
+      <option value="4">Amoxclav/amoxicillin</option>
+      <option value="5">others</option>
+    </select>
+    <!-- Add an id attribute to the paragraph element -->
+    <p id="dosageText">If you chose others, please input dosage in mg/kg manually:</p>
+    <input type="text" id="dosage" style="display: none">
+    <p>Enter the concentration in mg/ml:</p>
+    <input type="text" id="concentration">
+    <p><input type="submit" value="Calculate"></p>
+  </form>
+  <div id="result"></div>
+</body>

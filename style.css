@@ -65,7 +65,7 @@ input[type="submit"] {
   /* Change the background color and image of the body element */
   body {
     background-color: lightgreen;
-    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/190f3ff49ec9f662067e99532322378457016531/v870-tang-29.jpg"); /* Set the background image from the URL */
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/190f3ff49ec9f662067e99532322378457016531/v870-tang-29.jpg?raw=true"); /* Set the background image from the URL */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: contain; /* Resize the image without cropping it */
     background-position: center; /* Align the image to the center of the element */
@@ -96,7 +96,7 @@ input[type="submit"] {
   /* Change the background color and image of the body element */
   body {
     background-color: lightblue;
-    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/190f3ff49ec9f662067e99532322378457016531/v870-tang-29.jpg"); /* Set the background image from the URL */
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/190f3ff49ec9f662067e99532322378457016531/v870-tang-29.jpg?raw=true"); /* Set the background image from the URL */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: contain; /* Resize the image without cropping it */
     background-position: center; /* Align the image to the center of the element */

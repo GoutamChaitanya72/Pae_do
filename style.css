@@ -1,23 +1,24 @@
 /* Define the default styles for all elements */
-* {
+html {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-/* Define the styles for the h1 and h2 elements */
-h1,
-h2 {
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Define the styles for the heading elements */
+h1, h2 {
   font-family: Arial, sans-serif;
   text-align: center;
-  color: white;
+  color: var(--main-color);
 }
 
 /* Define the styles for the form elements */
 form {
   font-family: Arial, sans-serif;
-  width: 80%; /* Use relative width instead of fixed width */
-  margin: 0 auto; /* Center the form horizontally */
+  width: 80%;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid black;
   font-size: 5vw;
@@ -26,28 +27,28 @@ form {
 input,
 select {
   display: block;
-  width: 100%; /* Use relative width instead of fixed width */
+  width: 100%;
   margin-bottom: 10px;
   padding: 10px;
-  font-size: 4vw; /* Increase the font size of the input values */
+  font-size: 5vw;
 }
 
 input[type="submit"] {
   background-color: green;
   color: white;
   font-weight: bold;
-  font-size: 6vw; /* Increase the font size of the submit button */
+  font-size: 6vw;
 }
 
 /* Define the styles for the result element */
 #result {
   font-family: Arial, sans-serif;
-  width: 80%; /* Use relative width instead of fixed width */
-  margin: 20px auto; /* Center the result horizontally */
+  width: 80%;
+  margin: 20px auto;
   padding: 20px;
   border: 1px solid black;
   text-align: center;
-  font-size: 4rem;
+  font-size: 1rem;
 }
 #dosageText {
   display: none;
@@ -57,80 +58,80 @@ input[type="submit"] {
 
 /* If the screen width is less than or equal to 600px, apply the following styles */
 @media screen and (max-width: 600px) {
-  /* Change the font size of the h1 and h2 elements */
+  /* Change the font size of the heading elements */
   h1 {
-    font-size: 10vw; /* Use viewport width unit instead of fixed size */
+    font-size: 10vw;
+    text-align: center;
   }
-
   h2 {
-    font-size: 8vw; /* Use viewport width unit instead of fixed size */
+    font-size: 8vw;
+    text-align: center;
   }
 
   /* Change the background color and image of the body element */
   body {
+    --main-color: navy;
+    --accent-color: red;
     background-color: lightgreen;
-    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/4f835966dc9da69eff9baadce2d7a02b2a851e4a/3221598.jpg?raw=true"); /* Set the background image from the URL */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-size: cover; /* Resize the image to cover the entire container */
-    background-position: center; /* Align the image to the center of the element */ 
-}
-
-  /* Change the text color of the h1 element */
-  h1 {
-    color: navy;
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/4f835966dc9da69eff9baadce2d7a02b2a851e4a/3221598.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   /* Change the text color of the h2 element */
   h2 {
-    color: red;
+    color: var(--accent-color);
   }
 }
 
 /* If the screen width is greater than 600px and less than or equal to 1200px, apply the following styles */
 @media screen and (min-width: 600px) and (max-width: 1200px) {
-  /* Change the font size of the h1 and h2 elements */
+  /* Change the font size of the heading elements */
   h1 {
-    font-size: 8vw; /* Use viewport width unit instead of fixed size */
+    font-size: 8vw;
+    text-align: center;
   }
-
   h2 {
-    font-size: 6vw; /* Use viewport width unit instead of fixed size */
+    font-size: 6vw;
+    text-align: center;
   }
 
   /* Change the background color and image of the body element */
   body {
+    --main-color: navy;
+    --accent-color: red;
     background-color: lightblue;
-    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/4f835966dc9da69eff9baadce2d7a02b2a851e4a/3221598.jpg?raw=true"); /* Set the background image from the URL */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-size: cover; /* Resize the image to cover the entire container */
-    background-position: center; /* Align the image to the center of the element */
-  }
-
-  /* Change the text color of the h1 element */
-  h1 {
-    color: navy;
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/4f835966dc9da69eff9baadce2d7a02b2a851e4a/3221598.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
   /* Change the text color of the h2 element */
   h2 {
-    color: red;
+    color: var(--accent-color);
   }
 }
 
 /* If the screen width is greater than 1200px, apply the following styles */
 @media screen and (min-width: 1200px) {
-  /* Change the font size of the h1 and h2 elements */
+  /* Change the font size of the heading elements */
   h1 {
-    font-size: 10vw; /* Use viewport width unit instead of fixed size */
+    font-size: 10vw;
+    text-align: center;
+  }
+  h2 {
+    font-size: 8vw;
+    text-align: center;
   }
 
-  h2 {
-    font-size: 8vw; /* Use viewport width unit instead of fixed size */
-  }
   /* Change the background color and image of the body element */
   body {
+    --main-color: white;
+    --accent-color: white;
     background-color: lightpink;
-    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/764cb14fb22fa396dbca8c3559ab0d82b1a7a2fb/3221598.jpg?raw=true"); /* Set the background image from the URL */
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/main/7283494.jpg?raw=true");
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: cover; /* Resize the image to cover the entire container */
     background-position: center; /* Align the image to the center of the element */

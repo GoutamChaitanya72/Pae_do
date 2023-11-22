@@ -47,7 +47,6 @@ input[type="submit"] {
   padding: 20px;
   border: 1px solid black;
   text-align: center;
-  font-size: 100%;
 }
 #dosageText {
   display: none;
@@ -134,5 +133,8 @@ input[type="submit"] {
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: cover; /* Resize the image to cover the entire container */
     background-position: center; /* Align the image to the center of the element */
+  }
+  #result{
+    font-size: 2vw;
   }
 }

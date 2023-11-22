@@ -48,6 +48,9 @@ input[type="submit"] {
   border: 1px solid black;
   text-align: center;
 }
+#dosageText {
+  display: none;
+}
 
 /* Use media queries to define different styles for different screen sizes */
 

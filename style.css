@@ -68,7 +68,11 @@ input[type="submit"] {
   /* Change the background color and image of the body element */
   body {
     background-color: lightgreen;
-  }
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/8dc6c0f2491a464c15bd11e3eab3675e65161a0b/7283494.jpg?raw=true"); /* Set the background image from the URL */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Resize the image to cover the entire container */
+    background-position: center; /* Align the image to the center of the element */ 
+}
 
   /* Change the text color of the h1 element */
   h1 {
@@ -95,6 +99,10 @@ input[type="submit"] {
   /* Change the background color and image of the body element */
   body {
     background-color: lightblue;
+    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/8dc6c0f2491a464c15bd11e3eab3675e65161a0b/7283494.jpg?raw=true"); /* Set the background image from the URL */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-size: cover; /* Resize the image to cover the entire container */
+    background-position: center; /* Align the image to the center of the element */
   }
 
   /* Change the text color of the h1 element */

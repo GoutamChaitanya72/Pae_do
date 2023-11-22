@@ -47,7 +47,7 @@ input[type="submit"] {
   padding: 20px;
   border: 1px solid black;
   text-align: center;
-  font-size: 32rem;
+  font-size: 16rem;
 }
 #dosageText {
   display: none;

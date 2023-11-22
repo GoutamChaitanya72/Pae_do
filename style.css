@@ -28,6 +28,8 @@ form {
   padding: 20px;
   border: 1px solid black;
   font-size: 5vw;
+  box-shadow: 5px 5px 10px black;
+  border-radius: 10px;
 }
 
 input,
@@ -55,6 +57,9 @@ input[type="submit"] {
   border: 1px solid black;
   text-align: center;
   font-size: 1rem;
+  box-shadow: inset 3px 3px 5px gray;
+  border-radius: 20px;
+  border-radius: 10px 20px 30px 40px; /* top-left, top-right, bottom-right, bottom-left */
 }
 #dosageText {
   display: none;
@@ -78,8 +83,7 @@ input[type="submit"] {
   body {
     --main-color: navy;
     --accent-color: red;
-    background-color: lightgreen;
-    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/4f835966dc9da69eff9baadce2d7a02b2a851e4a/3221598.jpg?raw=true");
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -107,8 +111,7 @@ input[type="submit"] {
   body {
     --main-color: navy;
     --accent-color: red;
-    background-color: lightblue;
-    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/4f835966dc9da69eff9baadce2d7a02b2a851e4a/3221598.jpg?raw=true");
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -136,8 +139,7 @@ input[type="submit"] {
   body {
     --main-color: white;
     --accent-color: white;
-    background-color: lightpink;
-    background-image: url("https://github.com/GoutamChaitanya72/pae_do/blob/main/7283494.jpg?raw=true");
+    background-color: white;
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: cover; /* Resize the image to cover the entire container */
     background-position: center; /* Align the image to the center of the element */

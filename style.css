@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+
 /* Define the default styles for all elements */
 html {
   box-sizing: border-box;
@@ -16,7 +22,7 @@ h1, h2 {
 
 /* Define the styles for the form elements */
 form {
-  font-family: Momtserrat, sans-serif;
+  font-family: Montserrat, sans-serif;
   width: 80%;
   margin: 0 auto;
   padding: 20px;

@@ -94,9 +94,6 @@ input[type="submit"] {
   h2 {
     color: var(--accent-color);
   }
-#result {
-  font-size: 2rem;
-  }
 }
 
 /* If the screen width is greater than 600px and less than or equal to 1200px, apply the following styles */
@@ -125,9 +122,6 @@ input[type="submit"] {
   h2 {
     color: var(--accent-color);
   }
-#result {
-  font-size: 2rem;
-  }
 }
 
 /* If the screen width is greater than 1200px, apply the following styles */
@@ -150,8 +144,5 @@ input[type="submit"] {
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-size: cover; /* Resize the image to cover the entire container */
     background-position: center; /* Align the image to the center of the element */
-  }
-#result {
-  font-size: 2rem;
   }
 }

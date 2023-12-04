@@ -28,7 +28,7 @@
     }
 
     // This function calculates the dosage based on the weight and the med
-    function calculateDosage(weight, med) {
+    function calculateDosage(weight, med, ageSelect) {
       var dosage = 0;
       // Convert the med parameter to a number
       med = Number(med);
@@ -38,7 +38,9 @@
         dosage = 8 * weight;
       } else if (med == 4) {
         dosage = 10 * weight;
-      } else if (med == 5) {
+      } else if (med == 5 && ageSelect == 1){
+        dosage = 25 * weight
+        }else if (med == 6) {
         dosage = getFloatInput("dosage", "Please input dosage in mg/kg manually");
       }
       return dosage;
@@ -51,9 +53,21 @@
     }
 
     // This function displays the results on the web page
-    function displayResults(dosage, volume) {
-      document.getElementById("result").innerHTML =
+    function displayResults(dosage, volume, age) {
+      var ageSelect = document.getElementById("ageSelect");
+      var age = ageSelect.value
+      if (age == 2) {
+        document.getElementById("result").innerHTML = "The dosage should be 100mg 1-3 times daily upto 7 days.";
+      } else if (age == 3) {
+        document.getElementById("result").innerHTML = "The dosage should be 150mg 1-3 times daily upto 7 days.";
+      } else if (age == 4) {
+        document.getElementById("result").innerHTML = "The dosage should be 200mg 1-3 times daily upto 7 days.";
+      } else if (age == 5) {
+        document.getElementById("result").innerHTML = "The dosage should be a Tablet of 500mg TID daily upto 7 days.";
+      } else {
+        document.getElementById("result").innerHTML =
         "The total dose is " + dosage + " mg.<br>The volume is " + volume + " ml.";
+      }
     }
 
     // This function handles the submit event of the form
@@ -91,11 +105,19 @@
       // Get the value of the selected option
       var med = select.value;
       // Get the dosage input element by id
+      var ageWhat = document.getElementById("ageWhat");
+      
       var dosage = document.getElementById("dosage");
       // Get the dosage text element by id
       var dosageText = document.getElementById("dosageText");
       // Check if the selected option is 5 (others)
       if (med == 5) {
+        ageWhat.style.display = "block";
+      }
+      else {
+        ageWhat.style.display = "none";
+      }
+      if (med == 6) {
         // Show the dosage input and the dosage text
         dosage.style.display = "block";
         dosageText.style.display = "block";
@@ -105,23 +127,43 @@
         dosageText.style.display = "none";
       }
     }
+    function toggleAge() {
+      var ageSelect = document.getElementById("ageSelect");
+      if (med == 5) {
+        ageSelect.style.display = "block";
+      } else {
+        ageSelect.style.display = "none";
+      }
+    }
   </script>
 </head>
 <body>
   <h1 class="center">Pae_do</h1>
   <h2 class="center">Paediatric dosage calculator</h2>
   <form id="form" onsubmit="handleSubmit(event)">
-    <p>Enter the patient's weight in kg:</p>
-    <input type="text" id="weight">
     <label for="meds">Choose a medication:</label>
     <select name="meds" id="meds" onchange="toggleDosage()">
       <option value="" hidden>--select--</option>
       <option value="2">Paracetamol</option>
       <option value="3">cefixime</option>
       <option value="4">Amoxclav/amoxicillin</option>
-      <option value="5">others</option>
+      <option value="5">Mefenemic Acid</option>
+      <option value="6">others</option>
     </select>
     <!-- Add an id attribute to the paragraph element -->
+    <div id="ageWhat" style="Display: none">
+    <label for="ageSelect">Choose age:</label>
+    <select id="ageSelect" onchange="toggleAge()">
+      <option value="" hidden>--select--</option>
+      <option value= "1">>6months to <2years </option>
+      <option value= "2">2years to <5years</option>
+      <option value="3">5years to <9years</option>
+      <option value="4">9years to <12years</option>
+      <option value="5">>=12 years</option>
+    </select>
+    </div>
+    <p>Enter the patient's weight in kg:</p>
+    <input type="text" id="weight">
     <p id="dosageText">If you chose others, please input dosage in mg/kg manually:</p>
     <input type="text" id="dosage" style="display: none">
     <p>Enter the concentration in mg/ml:</p>

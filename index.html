@@ -8,7 +8,7 @@
       var input = document.getElementById(id).value;
       var num = parseFloat(input);
       if (isNaN(num)) {
-        alert("Invalid input. Please enter a number with decimals.");
+        alert("Invalid input. Please enter valid credentials.");
         return null;
       } else {
         return num;
@@ -30,19 +30,25 @@
     // This function calculates the dosage based on the weight and the med
     function calculateDosage(weight, med, age) {
       var dosage = 0;
-      var ageSelect =document.getElementById("ageSelect");
+      var ageSelect = document.getElementById("ageSelect");
       var age = ageSelect.value;
       // Convert the med parameter to a number
       med = Number(med);
       if (med == 2) {
         dosage = 12 * weight;
       } else if (med == 3) {
-        dosage = 8 * weight;
+        dosage = 4 * weight;
       } else if (med == 4) {
-        dosage = 10 * weight;
+        dosage = 18 * weight;
       } else if (med == 5 && age == 1){
         dosage = 25 * weight
-        }else if (med == 6) {
+      } else if (med == 7) {
+          dosage = 5 * weight
+      } else if (med == 8) {
+        dosage = 7 * weight
+      } else if (med == 9) {
+        dosage = 12 * weight
+      } else if (med == 10) {
         dosage = getFloatInput("dosage", "Please input dosage in mg/kg manually");
       }
       return dosage;
@@ -55,19 +61,53 @@
     }
 
     // This function displays the results on the web page
-    function displayResults(dosage, volume, age) {
+    function displayResults(dosage, volume, age, med) {
+      var med = document.getElementById("meds");
+      var med = med.value;
       var ageSelect = document.getElementById("ageSelect");
       var age = ageSelect.value
-      if (age == 1) {
-        document.getElementById("result").innerHTML = "The dosage is " + dosage +"mg per day in divided doses or 50mg 1-3 times a day.";
-      }else if (age == 2) {
+      if (med == 3) {
+        document.getElementById("result").innerHTML =
+        "The total dose is " + dosage + " mg.<br>The volume is " + volume + " ml. BD with a maximum dosage of 400mg/day.";
+      } else if (med == 4) {
+        document.getElementById("result").innerHTML =
+        "The total dose is " + dosage + " mg.<br>The volume is " + volume + " ml. BD with a maximum dosage of 875mg/dose.";
+      } else if (med == 5 && age == 1) {
+        document.getElementById("result").innerHTML = "The dosage is whatever is lower among " + dosage +"mg TID or 50mg TID for no more than 7 days.<br> Volume is "+ volume +"ml TID or 2.5ml TID: the lower one among the two.";
+      }else if (med == 5 && age == 2) {
         document.getElementById("result").innerHTML = "The dosage should be 100mg 1-3 times daily upto 7 days.";
-      } else if (age == 3) {
+      } else if (med == 5 && age == 3) {
         document.getElementById("result").innerHTML = "The dosage should be 150mg 1-3 times daily upto 7 days.";
-      } else if (age == 4) {
+      } else if (med == 5 && age == 4) {
         document.getElementById("result").innerHTML = "The dosage should be 200mg 1-3 times daily upto 7 days.";
-      } else if (age == 5) {
+      } else if (med == 5 && age == 5) {
         document.getElementById("result").innerHTML = "The dosage should be a Tablet of 500mg TID daily upto 7 days.";
+      } else if (med == 6 && age == 1) {
+        document.getElementById("result").innerHTML = "5-10mg TID fed 15mins before feed and a maximum dosage of 20mg/day.";
+      } else if (med == 6 && age == 2) {
+        document.getElementById("result").innerHTML = "10mg TID or QID with maximum dosage of 40mg/day.";
+      } else if (med == 6 && age == 3) {
+        document.getElementById("result").innerHTML = "10mg TID or QID with maximum dosage of 40mg/day.";
+      } else if (med == 6 && age == 4) {
+        document.getElementById("result").innerHTML = "10mg TID or QID with maximum dosage of 40mg/day.";
+      } else if (med == 6 && age == 5) {
+        document.getElementById("result").innerHTML = "10-20mg TID or QID for maximum of 2 weeks.";
+      } else if (med == 7) {
+        document.getElementById("result").innerHTML = "The total dose is " + dosage +"mg BD.<br>The volume is " + volume +" ml BD with a usual maximum dose of 200mg/dose.<br>For adolescents above 12 years,sometimes a maximum dosage of 400mg/dose may be required.";
+      } else if (med == 8 && age == 1) {
+        document.getElementById("result").innerHTML = "The total dose is "+ dosage +"mg and volume is "+ volume +"ml every 6-8 hours with maximum single dose of 400mg and maximum dosage of 40mg/kg/day. This holds true upto patients of 50kg of weight.";
+      } else if (med == 8 && age == 1) {
+        document.getElementById("result").innerHTML = "The total dose is "+ dosage +"mg and volume is "+ volume +"ml every 6-8 hours with maximum single dose of 400mg and maximum dosage of 40mg/kg/day. This holds true upto patients of 50kg of weight.";
+      } else if (med == 8 && age == 2) {
+        document.getElementById("result").innerHTML = "The total dose is "+ dosage +"mg and volume is "+ volume +"ml every 6-8 hours with maximum single dose of 400mg and maximum dosage of 40mg/kg/day. This holds true upto patients of 50kg of weight.";
+      } else if (med == 8 && age == 3) {
+        document.getElementById("result").innerHTML = "The total dose is "+ dosage +"mg and volume is "+ volume +"ml every 6-8 hours with maximum single dose of 400mg and maximum dosage of 40mg/kg/day. This holds true upto patients of 50kg of weight.";
+      } else if (med == 8 && age == 4) {
+        document.getElementById("result").innerHTML = "The total dose is "+ dosage +"mg and volume is "+ volume +"ml every 6-8 hours with maximum single dose of 400mg and maximum dosage of 40mg/kg/day. This holds true upto patients of 50kg of weight.";
+      } else if (med == 8 && age == 5) {
+        document.getElementById("result").innerHTML = "200mg every 6 hours and maybe increased to 400mg if pain doesn't respond, with a maximum dosage of 1200mg/day. Treatment should be discontinued if there is no response for 10 days.";
+      } else if (med == 9) {
+        document.getElementById("result").innerHTML = "The total dose is "+ dosage +"mg TID.<br>Volume is "+ volume +"ml TID with a maximum dosage of 2250mg/day."
       } else {
         document.getElementById("result").innerHTML =
         "The total dose is " + dosage + " mg.<br>The volume is " + volume + " ml.";
@@ -115,13 +155,13 @@
       // Get the dosage text element by id
       var dosageText = document.getElementById("dosageText");
       // Check if the selected option is 5 (others)
-      if (med == 5) {
+      if (med == 5 || med == 6 || med == 8) {
         ageWhat.style.display = "block";
       }
       else {
         ageWhat.style.display = "none";
       }
-      if (med == 6) {
+      if (med == 10) {
         // Show the dosage input and the dosage text
         dosage.style.display = "block";
         dosageText.style.display = "block";
@@ -133,7 +173,7 @@
     }
     function toggleAge() {
       var ageSelect = document.getElementById("ageSelect");
-      if (med == 5) {
+      if (med == 5 || med == 6 || med == 8) {
         ageSelect.style.display = "block";
       } else {
         ageSelect.style.display = "none";
@@ -152,7 +192,11 @@
       <option value="3">cefixime</option>
       <option value="4">Amoxclav/amoxicillin</option>
       <option value="5">Mefenemic Acid</option>
-      <option value="6">others</option>
+      <option value="6">Dicycloverine</option>
+      <option value="7">Cefpodoxime</option>
+      <option value="8">Ibuprofen</option>
+      <option value="9">Metronidazole</option>
+      <option value="10">Others</option>
     </select>
     <!-- Add an id attribute to the paragraph element -->
     <div id="ageWhat" style="Display: none">
